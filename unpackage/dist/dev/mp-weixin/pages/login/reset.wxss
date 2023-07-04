@@ -1,0 +1,51 @@
+
+.margin-top-title {
+	margin-top: 200rpx;
+}
+.form_input_css {
+	padding-left: 25px;
+	padding-right: 25px;
+}
+.cu-form-group {
+	background-color: #ffffff;
+	padding: 1px 12px;
+	display: flex;
+	align-items: center;
+	min-height: 43px;
+	justify-content: space-between;
+	border-radius: 50px;
+	margin-top: 20px;
+}
+.title-back-css {
+	width: 200rpx;
+	float: left;
+	height: 50px;
+	font-size: 18px;
+	line-height: 50px;
+	text-align: center;
+}
+.title-title-css {
+	width: 635rpx;
+	height: 50px;
+	font-size: 18px;
+	line-height: 50px;
+	text-align: center;
+}
+.logon-title-css {
+	font-size: 18px;
+	flex: 1;
+	height: 50px;
+	justify-content: "center";
+	align-items: "center";
+	line-height: 50px;
+}
+.bg-gradual-pink {
+	background-image: linear-gradient(45deg, #0075f2, #0075f2);
+	color: #ffffff;
+	height: 50px;
+	padding-top: 0px;
+}
+.cu-form-group .title {
+	min-width: calc(4em + 15px);
+}
+

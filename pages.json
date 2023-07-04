@@ -1,0 +1,400 @@
+{
+	"pages": [
+		{
+			"path": "pages/platform/platform",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/chatroom/chatroomlist",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				},
+				"scrollIndicator": "none"
+
+			}
+		},
+		{
+			"path": "pages/chatroom/chatroom",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				},
+				"scrollIndicator": "none"
+
+			}
+		},
+		{
+			"path": "pages/evaluate/evaluate",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				},
+				"scrollIndicator": "none"
+
+			}
+		},
+		{
+			"path": "pages/my/myjob",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				},
+				"scrollIndicator": "none"
+
+			}
+		},
+		{
+			"path": "pages/my/my",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				},
+				"scrollIndicator": "none"
+
+			}
+		},
+		{
+			"path": "pages/message/message",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				},
+				"scrollIndicator": "none"
+
+			}
+		},
+		{
+			"path": "pages/factoryrecruit/positiondetails",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				},
+				"scrollIndicator": "none"
+
+			}
+		},
+		{
+			"path": "pages/factoryrecruit/factoryrecruit",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				},
+				"scrollIndicator": "none"
+
+			}
+		},
+		{
+			"path": "pages/enterprisehomepage/enterprisehomepage",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				},
+				"scrollIndicator": "none"
+
+			}
+		},
+		{
+			"path": "pages/publishjob/publishjob",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				},
+				"scrollIndicator": "none"
+
+			}
+		},
+		{
+			"path": "pages/publishworkers/publishworkers",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				},
+				"scrollIndicator": "none"
+
+			}
+		},
+		{
+			"path": "pages/attestation/information",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				},
+				"scrollIndicator": "none"
+
+			}
+		},
+		{
+			"path": "pages/attestation/test",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				},
+				"scrollIndicator": "none"
+
+			}
+		},
+		{
+			"path": "pages/attestation/attestation",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				},
+				"scrollIndicator": "none"
+
+			}
+		},
+		{
+			"path": "pages/positioncard/positioncard",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/login/logon",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/login/reset",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		}
+        ,{
+            "path" : "pages/publishjob/publishjob",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/enterprisehomepage/enterprisehomepage",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/factoryrecruit/factoryrecruit",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/message/message",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/evaluate/evaluate",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/appointment/appointment",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/test/test",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/administrator/administrator",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/administrator/entrepreneurshipclassadministration",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/administrator/extensiondetails",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/administrator/awardslist",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/administrator/authenticationmanagement",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/crowd/crowdadministration",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/crowd/createcrowd",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+        
+        }
+		,{
+            "path" : "pages/attestation/address",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/my/myenterprise",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/my/myjobenterprise",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/platform/platformenterprise",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/myemployees/myemployees",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/economicpusher/economicpusher",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"scrollIndicator": "none",
+		"app-plus": {
+			"scrollIndicator": "none" //全局 在APP页面都不显示滚动条
+		},
+
+		"mp-alipay": {
+			/* 支付宝小程序特有相关 */
+			"transparentTitle": "always",
+			"allowsBounceVertical": "NO"
+		},
+		"navigationBarBackgroundColor": "#0081ff",
+		"navigationBarTitleText": "25",
+		"navigationStyle": "custom",
+		"navigationBarTextStyle": "white"
+	},
+	"condition" : { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [
+			{
+				"name": "", //模式名称
+				"path": "", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			}
+		]
+	}
+}

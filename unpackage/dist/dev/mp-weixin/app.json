@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/attestation/address",
+    "pages/attestation/attestation",
+    "pages/platform/platform",
+    "pages/positioncard/positioncard",
+    "pages/login/login",
+    "pages/login/logon",
+    "pages/login/reset",
+    "pages/index/index"
+  ],
+  "subPackages": [],
+  "window": {
+    "scrollIndicator": "none",
+    "navigationBarBackgroundColor": "#0081ff",
+    "navigationBarTitleText": "25",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {}
+}

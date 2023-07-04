@@ -1,0 +1,89 @@
+
+.agreeon-css {
+		font-size: 12px;
+		float: right;
+		border: 0px;
+		top: -2px;
+		left: -70px;
+		color: #007aff;
+}
+.margin-top-title {
+		margin-top: 200rpx;
+}
+.padding-lr-xl {
+		padding-left: 21px;
+		padding-right: 21px;
+}
+.cu-form-group {
+		background-color: #ffffff;
+		padding: 1px 12px;
+		display: flex;
+		align-items: center;
+		min-height: 43px;
+		justify-content: space-between;
+		border-radius: 50px;
+		margin-top: 20px;
+}
+.uni-input-input {
+		position: relative;
+		display: block;
+		height: 100%;
+		background: none;
+		color: inherit;
+		opacity: 1;
+		font: inherit;
+		line-height: inherit;
+		letter-spacing: inherit;
+		text-align: inherit;
+		text-indent: inherit;
+		text-transform: inherit;
+		text-shadow: inherit;
+}
+.shadow-warp {
+		position: relative;
+		box-shadow: 0 0 4px rgb(0 0 0 / 10%);
+}
+.login-paddingtop {
+		padding-top: 250rpx;
+}
+.zai-box {
+		padding: 0 20rpx;
+		padding-top: 114px;
+		position: relative;
+}
+.zai-logo {
+		width: 200rpx;
+		height: 150px;
+}
+.zai-title {
+		font-size: 58rpx;
+		color: #0075f2;
+		text-align: center;
+}
+.input-placeholder,
+	.zai-input {
+		color: #94afce;
+}
+.zai-label {
+		padding: 60rpx 0;
+		text-align: center;
+		font-size: 30rpx;
+		color: #a7b6d0;
+}
+.zai-btn {
+		background: #ff65a3;
+		color: #fff;
+		border: 0;
+		border-radius: 100rpx;
+		font-size: 36rpx;
+}
+.zai-btn:after {
+		border: 0;
+}
+
+	/*按钮点击效果*/
+.zai-btn.button-hover {
+		-webkit-transform: translate(1rpx, 1rpx);
+		        transform: translate(1rpx, 1rpx);
+}
+

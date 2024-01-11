@@ -6,6 +6,11 @@
 			<uni-segmented-control :current="current" :values="items" :style-type="styleType"
 				:active-color="activeColor" @clickItem="onClickItem" />
 		</view>
+		
+		
+		
+		
+		
 		<view style="background-color: #f5f5f5;">
 			<view v-if="current === 0" style="margin: 11px;background-color: #f5f5f5;">
 				<scroll-view :scroll-top="scrollTop" scroll-y="true" :style="[{height:clineHeight+'px'}]"

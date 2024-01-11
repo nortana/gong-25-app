@@ -2,13 +2,13 @@
 	<view class="pageContent">
 		<!-- @clickLeft="clickLeftHandle" left-icon="left" -->
 		<uni-nav-bar title="我的" dark :fixed="true" shadow background-color="#007AFF" status-bar />
-		<view style="height: 150px;border: 1px solid white;background-color: white;">
+		<view style="height: 150px;border: 1px solid white;background-color: white;" :loading="loading">
 			<view style="flex-direction: row;display: flex;margin-top: 20px;margin-left: 30px;">
 				<view>
-					<image style="width: 60px; height: 60px;border-radius: 50px;" src="@/static/g1.png"></image>
+					<image style="width: 60px; height: 60px;border-radius: 50px;" :src="dataAll.avatar"></image>
 				</view>
 				<view style="margin-left: 18px;margin-top: 7px;">
-					<view style="font-size: 20px;font-weight: 1000;">职场小白白</view>
+					<view style="font-size: 20px;font-weight: 1000;">{{dataAll.nick}}</view>
 					<view style="font-size: 16px;margin-top: 5px;">去认证</view>
 				</view>
 			</view>
@@ -17,19 +17,19 @@
 				<view style="display: flex;flex-direction:row;font-size: 18px;">
 					<view class="num-view-class">
 						<view style="display: flex;flex-direction:column;">
-							<view style="text-align: center;color:#ffc279;">12</view>
+							<view style="text-align: center;color:#ffc279;">{{dataAll.resume_data.true}}</view>
 							<view style="margin-top: 8px;">预约成功数</view>
 						</view>
 					</view>
 					<view class="num-view-class">
 						<view style="display: flex;flex-direction:column;">
-							<view style="text-align: center;color:#5c92f0;">12</view>
+							<view style="text-align: center;color:#5c92f0;">{{dataAll.resume_data.select}}</view>
 							<view style="margin-top: 8px;">定聘数</view>
 						</view>
 					</view>
 					<view @click="myAppointmentHandle" class="num-view-class">
 						<view style="display: flex;flex-direction:column;">
-							<view style="text-align: center;color:#e32c30;">12</view>
+							<view style="text-align: center;color:#e32c30;">{{dataAll.resume_data.appointment}}</view>
 							<view style="margin-top: 8px;">我的预约</view>
 						</view>
 					</view>
@@ -44,7 +44,7 @@
 					height: 60px;justify-content: center; align-items: center; ">
 					<view style="display: flex;flex-direction:column;">
 						<view style="text-align: center;font-size: 16px;font-weight: 700;">发布求职</view>
-						<view style="margin-top:5px;font-size: 11px;">105个在招职位</view>
+						<view style="margin-top:5px;font-size: 11px;">{{dataAll.resume_data.resume_all}}个在招职位</view>
 					</view>
 					<view style="margin-left: 10px;">
 						<image style="width: 40px; height: 40px;" src="@/static/g4.png"></image>
@@ -54,7 +54,7 @@
 				height: 60px; justify-content: center; align-items: center;margin-left: 10px; ">
 					<view style="display: flex;flex-direction:column;" @click="myJob">
 						<view style="text-align: center;font-size: 16px;font-weight: 700;">我的求职</view>
-						<view style="margin-top: 5px;font-size: 11px;">4个求职卡</view>
+						<view style="margin-top: 5px;font-size: 11px;">{{dataAll.resume_data.user_resume_all}}个求职卡</view>
 					</view>
 					<view style="margin-left: 10px;">
 						<image style="width: 40px; height: 40px;" src="@/static/g5.png"></image>
@@ -63,7 +63,7 @@
 			</view>
 		</view>
 		<view style="background-color: white;margin: 10px;border-radius: 10px;">
-			<scroll-view :scroll-top="scrollTop" scroll-y="true" :style="[{height:clineHeight+'px'}]">
+			<scroll-view :scroll-top="scrollTop" scroll-y="true"  :style="{height: `${windowHeight}rpx`}">
 				<view style="display: flex;flex-direction:column;">
 					<view class="menu-list-class" >
 						<view>
@@ -154,6 +154,8 @@
 	export default {
 		data() {
 			return {
+				dataAll:{},
+				loading:false,
 				scrollTop: 0,
 				old: {
 					scrollTop: 0
@@ -162,30 +164,52 @@
 
 			}
 		},
+		computed:{
+			windowHeight() {
+			    return this.rpxTopx(uni.getSystemInfoSync().windowHeight)
+			},
+		},
 		components: {
 			bottomStateNav
 		},
 		onLoad() {
-			this.getClineHeight();
+			this.rpxTopx(uni.getSystemInfoSync().windowHeight);
+			this.queryData();
 		},
 		methods: {
-			getBarHeight() {
-				const res = uni.getSystemInfoSync()
-				if (res.platform === 'ios') {
-					return 44 + res.statusBarHeight
-				} else if (res.platform === 'android') {
-					return 48 + res.statusBarHeight
-				} else {
-					return 0;
-				}
+			rpxTopx(px){
+				let deviceWidth = wx.getSystemInfoSync().windowWidth-700
+				let rpx = ( 750 / deviceWidth ) * Number(px)
+				return Math.floor(rpx)
 			},
-			//获取可视区域高度
-			getClineHeight() {
-				const res = uni.getSystemInfo({
-					success: (res => {
-						console.log("res.windowHeight:::", res.windowHeight);
-						this.clineHeight = res.windowHeight - this.getBarHeight() - 400;
-					})
+			queryData(){
+				this.loading = true;
+				this.$http.request({
+					url: '/userHome',
+					dataType: 'text',
+					method:"POST",
+					data: {
+					},
+				}).then(res => {
+					let jsonObj = JSON.parse(res);
+					console.log("jsonObj--->", jsonObj)
+					if (jsonObj.code == 0) {
+						this.dataAll = jsonObj.data;
+					} else {
+						uni.showModal({
+							content: jsonObj.msg,
+							showCancel: false
+						});
+					}
+					this.loading = false;
+				}).catch(err => {
+					console.log('request fail', err);
+					uni.showModal({
+						content: err.msg,
+						showCancel: false
+					});
+				
+					this.loading = false;
 				});
 			},
 			enterpriseHandle() {

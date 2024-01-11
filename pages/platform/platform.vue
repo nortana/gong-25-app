@@ -266,6 +266,7 @@
 					},
 				}).then(res => {
 					let jsonObj = JSON.parse(res);
+					console.log('jsonObj--->',jsonObj)
 					this.list = jsonObj.data
 					this.loading = false;
 				}).catch(err => {

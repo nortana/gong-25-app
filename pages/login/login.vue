@@ -39,7 +39,7 @@
 
   				<view class=" text-center " style="margin-top: 30px;    text-align: center;">
   					<label class="radio" style="font-size: 12px;">
-  						<radio :checked="radioState" style="transform:scale(0.5)" @click="setRadionState" />我已阅读并同意相关
+  						<radio  :checked="radioState" style="transform:scale(0.5)" @click="setRadionState" />我已阅读并同意相关
   						<button plain="false" class=" text-shadow agreeon-css"
   							@click="toggle('bottom')">《用户协议》</button>
 
@@ -91,7 +91,7 @@
   					</text></view>
   			</uni-popup>
   		</view>
-
+  
   	</view>
 
   </template>
@@ -126,6 +126,11 @@
   				this.pwdValNullTrue = false
   			},
   		},
+		onLoad(e) {
+			console.log('e--->', e)
+			this.userName=e.username
+			this.password=e.password
+		},
   		methods: {
   			setRadionState() {
   				if (this.radioState) {
@@ -143,31 +148,41 @@
   			},
   			toggle(type) {
   				// open 方法传入参数 等同在 uni-popup 组件上绑定 type属性
-  				this.$refs.popup.open(type)
+  				//this.$refs.popup.open(type)
+  				uni.navigateTo({
+  					url: '/pages/login/protocolcontract?username='+this.userName+'&password='+this.password
+  				})
   			},
   			onLogin() {
   				if (!this.userName) {
   					this.accountValNull = true
+					return;
   				}
   				if (!this.password) {
   					this.pwdValNull = true
+					return;
   				}
 
 
 
   				this.loading = true;
   				this.$http.request({
-  					url: '/userLoginByPhone',
+  					url: '/userLoginByUserName',
   					dataType: 'text',
+					method:"POST",
   					data: {
-  						prefix: "userForgetPassWordByPhone",
-  						phone: myForm.phone
+  						username: this.userName,
+  						password: this.password
   					},
   				}).then(res => {
   					let jsonObj = JSON.parse(res);
   					console.log("jsonObj--->", jsonObj)
   					if (jsonObj.code == 0) {
-
+						uni.setStorageSync('company_functions_ids', jsonObj.company_functions_ids);
+						uni.setStorageSync('company_id', jsonObj.company_id);
+						uni.setStorageSync('token', jsonObj.token);
+						uni.setStorageSync('user_id', jsonObj.user_id);
+						this.openHandler();
   					} else {
   						uni.showModal({
   							content: jsonObj.msg,
@@ -186,6 +201,12 @@
   				});
 
   			},
+			openHandler() {
+				let url = '/pages/platform/platform'
+				uni.navigateTo({
+					url: url
+				})
+			},
   			forgotPassword() {
   				uni.navigateTo({
   					url: '/pages/login/reset'

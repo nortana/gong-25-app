@@ -15,7 +15,8 @@ Vue.use(router)
 Vue.prototype.$http = http
 Vue.config.productionTip = false
 Vue.prototype.baseurl= 'http://app.gong25.com'; 
-
+//uni.setStorageSync('token', '2token_app59012A4617F9E1068503B0656AA4F7');
+uni.setStorageSync('token', '3token_appF1ECD70C4DDC6154151B1B3A68F1D018');
 
 App.mpType = 'app'
 
